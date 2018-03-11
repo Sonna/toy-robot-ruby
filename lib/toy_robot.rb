@@ -10,7 +10,7 @@ module ToyRobot
     "DRAW" => :draw
   }
 
-  SEPARATORS_REGEX = %r{[ |,\s*]}
+  SEPARATORS_REGEX = %r{[|,\s*]}
 
   # TABLE = Array.new(5) { Array.new(5) { '.' } }
   # TABLE = [
@@ -57,7 +57,7 @@ module ToyRobot
 
       @x = new_x.to_i
       @y = new_y.to_i
-      @facing = @facing.to_s
+      @facing = facing.to_s
 
       @table[x][y] = ICON.dup
     end
