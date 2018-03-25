@@ -1,0 +1,17 @@
+version: 2
+jobs:
+  test:
+    docker:
+    - image: ruby:2.3
+    steps:
+    - checkout
+    - run: ruby -v
+    - run: gem install bundler  --no-ri --no-rdoc
+    - run: bundle install -j $(nproc) --path vendor
+    - run: bundle exec rake test
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+    - test
