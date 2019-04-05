@@ -1,7 +1,7 @@
 steps:
   - label: ':ruby: Test'
     command:
-      - "gem install bundler -v \"~>1.0\""
+      - "gem install bundler"
       - "bundle install -j $(nproc) --path vendor"
       - "bundle exec rake test"
     plugins:
